@@ -1,0 +1,16 @@
+{
+  "name": "purescript-functor-optics",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-day": "^2.0.0",
+    "purescript-profunctor": "^1.0.0"
+  },
+  "devDependencies": {
+    "purescript-psci-support": "^1.0.0"
+  }
+}
