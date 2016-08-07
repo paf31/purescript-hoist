@@ -6,6 +6,11 @@
     "bower_components",
     "output"
   ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paf31/purescript-functor-optics.git"
+  },
   "dependencies": {
     "purescript-day": "^2.0.0",
     "purescript-profunctor": "^1.0.0"
