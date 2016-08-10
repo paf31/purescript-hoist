@@ -12,8 +12,9 @@
     "url": "git://github.com/paf31/purescript-functor-optics.git"
   },
   "dependencies": {
-    "purescript-day": "^2.0.0",
-    "purescript-profunctor": "^1.0.0"
+    "purescript-functor-products": "^1.0.0",
+    "purescript-functor-coproducts": "^1.1.0",
+    "purescript-functor-compose": "^0.1.0"
   },
   "devDependencies": {
     "purescript-psci-support": "^1.0.0"
