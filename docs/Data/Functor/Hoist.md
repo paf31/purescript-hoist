@@ -36,7 +36,7 @@ hoistFree ⇜ right ⇜ first
 #### `composeHoist`
 
 ``` purescript
-composeHoist :: forall a b c d e f. (c ~> d -> e ~> f) -> (a ~> b -> c ~> d) -> a ~> b -> e ~> f
+composeHoist :: forall a b c d e f. Hoist e f c d -> Hoist c d a b -> Hoist e f a b
 ```
 
 Compose `Hoist`ing functions.

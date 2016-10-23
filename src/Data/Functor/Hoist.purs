@@ -1,11 +1,11 @@
 module Data.Functor.Hoist where
 
 import Prelude
-
 import Data.Either (Either(..))
-import Data.Functor.Compose (Compose(..), decompose)
+import Data.Functor.Compose (Compose(..))
 import Data.Functor.Coproduct (Coproduct(..))
 import Data.Functor.Product (Product(..))
+import Data.Newtype (unwrap)
 import Data.Tuple (Tuple(..))
 
 -- | `Hoist` asserts that natural transformations between `a` and `b` can
@@ -41,10 +41,9 @@ type Hoist s t a b = a ~> b -> s ~> t
 -- | This is provided to help with type inference.
 composeHoist
   :: forall a b c d e f
-   . (c ~> d -> e ~> f)
-  -> (a ~> b -> c ~> d)
-  -> a ~> b
-  -> e ~> f
+   . Hoist e f c d
+  -> Hoist c d a b
+  -> Hoist e f a b
 composeHoist h1 h2 f = h1 (h2 f)
 
 infixr 8 composeHoist as ⇜
@@ -69,8 +68,8 @@ right _ (Coproduct (Left ha)) = Coproduct (Left ha)
 
 -- | Hoist over the inner function in a composition.
 precomposed :: forall f g h. Functor h => Hoist (Compose h f) (Compose h g) f g
-precomposed f fga = Compose (map f (decompose fga))
+precomposed f fga = Compose (map f (unwrap fga))
 
 -- | Hoist over the outer function in a composition.
 composed :: forall f g h. Hoist (Compose f h) (Compose g h) f g
-composed f fga = Compose (f (decompose fga))
+composed f fga = Compose (f (unwrap fga))
