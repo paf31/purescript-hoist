@@ -1,5 +1,5 @@
-# purescript-functor-optics
+# purescript-hoist
 
-Optics between functors
+Hoisting natural transformations
 
-Docs are available on [Pursuit](https://pursuit.purescript.org/packages/purescript-functor-optics).
+Docs are available on [Pursuit](https://pursuit.purescript.org/packages/purescript-hoist).
