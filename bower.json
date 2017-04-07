@@ -9,12 +9,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/paf31/purescript-functor-optics.git"
+    "url": "git://github.com/paf31/purescript-hoist.git"
   },
   "dependencies": {
-    "purescript-functors": "^1.0.0"
+    "purescript-functors": "^2.0.0"
   },
   "devDependencies": {
-    "purescript-psci-support": "^2.0.0"
+    "purescript-psci-support": "^3.0.0"
   }
 }
